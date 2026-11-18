@@ -5,6 +5,10 @@ const Button = ({onClick, text}) => <button onClick={onClick}>{text}</button>
 const Statistics = (props) => {
   const all = props.good + props.neutral + props.bad
 
+  if (all == 0){
+    return <p>No feedback given</p>
+  }
+
   const average = () => (props.good - props.bad) / all
 
   const positive = () => (props.good/all) * 100
